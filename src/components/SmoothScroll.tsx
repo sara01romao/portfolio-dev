@@ -2,39 +2,33 @@
 
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { setLenis } from "@/lib/lenis";
 
-/**
- * Ativa scroll com inércia (smooth/inertia scrolling) em toda a página.
- * Respeita prefers-reduced-motion: usuários que pedem menos movimento
- * continuam com o scroll nativo do navegador.
- */
-export default function SmoothScroll() {
+/** Scroll com inércia (Lenis) */
+export default function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    if (prefersReduced) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t: number) => 1 - Math.pow(1 - t, 3),
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 1.1,
+      lerp: 0.085,          // menor = mais inércia
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.4,
     });
+    setLenis(lenis);
 
-    let rafId: number;
-    function raf(time: number) {
-      lenis.raf(time);
-      rafId = requestAnimationFrame(raf);
-    }
-    rafId = requestAnimationFrame(raf);
+    let raf = 0;
+    const loop = (t: number) => {
+      lenis.raf(t);
+      raf = requestAnimationFrame(loop);
+    };
+    raf = requestAnimationFrame(loop);
 
     return () => {
-      cancelAnimationFrame(rafId);
+      cancelAnimationFrame(raf);
       lenis.destroy();
+      setLenis(null);
     };
   }, []);
 
-  return null;
+  return <>{children}</>;
 }

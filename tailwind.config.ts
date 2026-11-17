@@ -1,30 +1,26 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+  "./src/app/**/*.{ts,tsx}",
+  "./src/components/**/*.{ts,tsx}"
+  ],
   theme: {
     extend: {
       colors: {
-        ink: "#111112",
-        paper: "#FBFAF8",
-        haze: "#F1F0EC",
-        flamingo: "#F14E8A",
-        flamingoDark: "#C93268",
+        ink: "#0d0d0d",
+        night: "#161616",
+        graphite: "#3a3a3a",
+        lilac: "#e4e2ec",
+        rose: "#ee6f9b",
+        ember: "#ff5a1f",
       },
       fontFamily: {
-        display: ["var(--font-sora)", "sans-serif"],
-        body: ["var(--font-plex)", "sans-serif"],
-        mono: ["var(--font-plex-mono)", "monospace"],
-      },
-      maxWidth: {
-        wrap: "1180px",
-      },
-      letterSpacing: {
-        tightest2: "-0.045em",
+        display: ["var(--font-display)", "sans-serif"],
+        body: ["var(--font-body)", "sans-serif"],
       },
     },
   },
   plugins: [],
 };
-
 export default config;

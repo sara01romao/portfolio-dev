@@ -1,42 +1,27 @@
 import type { Metadata } from "next";
-import { Sora, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
-import SmoothScroll from "@/src/components/SmoothScroll";
-import './globals.css';
+import { Montserrat, Inter } from "next/font/google";
+import SmoothScroll from "../components/SmoothScroll";
+import "./globals.css";
 
-const sora = Sora({
+const display = Montserrat({
   subsets: ["latin"],
-  variable: "--font-sora",
-  weight: ["400", "500", "600", "700"],
+  weight: ["600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  variable: "--font-display",
 });
-
-const plex = IBM_Plex_Sans({
-  subsets: ["latin"],
-  variable: "--font-plex",
-  weight: ["400", "500", "600"],
-});
-
-const plexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  variable: "--font-plex-mono",
-  weight: ["400", "500"],
-});
+const body = Inter({ subsets: ["latin"], variable: "--font-body" });
 
 export const metadata: Metadata = {
-  title: "Sara Romão — Soluções de software",
+  title: "Sara Romão — Soluções de Software",
   description:
-    "Analista e desenvolvedora de software. Design, APIs, integrações e automação.",
+    "Websites, APIs, aplicações e ferramentas de automação sob medida.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${sora.variable} ${plex.variable} ${plexMono.variable}`}>
-      <body className="bg-paper font-body text-ink">
-        <SmoothScroll />
-        {children}
+    <html lang="pt-BR" className={`${display.variable} ${body.variable}`}>
+      <body>
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );
