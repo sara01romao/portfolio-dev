@@ -10,19 +10,19 @@ const tabs = [
     id: "exp",
     label: "Experiência",
     icon: Workflow,
-    text: "Projetos profissionais e independentes, participando de diferentes etapas do desenvolvimento de software.",
+    text: "projetos profissionais e independentes, participando de diferentes etapas do desenvolvimento de software.",
   },
   {
     id: "tec",
     label: "Tecnologia",
     icon: Monitor,
-    text: "Busco equilibrar qualidade técnica, organização, usabilidade e experiência do usuário em cada projeto.",
+    text: "busco equilibrar qualidade técnica, organização, usabilidade e experiência do usuário em cada projeto.",
   },
   {
     id: "abo",
     label: "Abordagem",
     icon: BrainCircuit,
-    text: "Começo pelo fluxo do usuário, desenho a arquitetura e entrego código simples de manter.",
+    text: "começo pelo fluxo do usuário, desenho a arquitetura e entrego código simples de manter.",
   },
 ];
 
@@ -87,7 +87,7 @@ export default function About() {
               transition={{ duration: 0.25 }}
               className="text-lg"
             >
-              <span className="text-rose text-lg"># {current.label}</span> {current.text}
+              <span className="text-rose text-lg"># {current.label} -</span> {current.text}
             </motion.p>
           </AnimatePresence>
           <motion.div
