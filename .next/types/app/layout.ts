@@ -1,4 +1,4 @@
-// File: /home/romao/developer/dev/frontend/proj-portf/portfolios/portfolio-dev/src/app/layout.tsx
+// File: /home/romao/developer/ia-project/port-ia/src/app/layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
