@@ -10,7 +10,7 @@ const tabs = [
     id: "exp",
     label: "Experiência",
     icon: Workflow,
-    text: "Experiência em projetos profissionais e independentes, participando de diferentes etapas do desenvolvimento de software.",
+    text: "Projetos profissionais e independentes, participando de diferentes etapas do desenvolvimento de software.",
   },
   {
     id: "tec",
@@ -61,8 +61,8 @@ export default function About() {
                 />
 
 
-                <span className="sm:hidden">{t.label[0]}</span>
-                <span className="hidden sm:inline">{t.label}</span>
+                <span className="sm:hidden text-ink">{t.label[0]}</span>
+                <span className="hidden sm:inline text-ink">{t.label}</span>
               </motion.button>
             );
           })}
@@ -87,7 +87,7 @@ export default function About() {
               transition={{ duration: 0.25 }}
               className="text-lg"
             >
-              <span className="text-rose text-lg">#</span> {current.text}
+              <span className="text-rose text-lg"># {current.label}</span> {current.text}
             </motion.p>
           </AnimatePresence>
           <motion.div
