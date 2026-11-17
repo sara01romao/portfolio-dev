@@ -8,7 +8,7 @@ import { FaGithub, FaYoutube } from "react-icons/fa";
 const links = [
   { title: "Mais Projetos", sub: "github", href: "https://github.com/sara01romao", icon: <FaGithub size={44} />, offset: "md:ml-10" },
   { title: "Vídeos", sub: "youtube", href: "https://www.youtube.com/@sararomaodev", icon: <FaYoutube size={44} className="bg-red-600 p-1.5 text-white" />, offset: "md:-ml-6" },
-  { title: "Dev Game", sub: "jogos", href: "https://sara01romao.github.io/campo-minado-logica-desafio/", icon: <Gamepad2 size={40} className="bg-purple-600 "/>, offset: "md:ml-10" },
+  { title: "Dev Game", sub: "jogos", href: "https://sara01romao.github.io/campo-minado-logica-desafio/", icon: <Gamepad2 size={40} className="bg-purple-600 text-white "/>, offset: "md:ml-10" },
 ];
 
 export default function Repos() {
